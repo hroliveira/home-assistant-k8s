@@ -7,7 +7,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Project
 metadata:
   name: home-assistent
-  namespace: home-assistant
+  namespace: argocd
 spec:
   description: Project for Home Assistant
   sourceRepos:
@@ -120,11 +120,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: home-assistant-app
-  namespace: home-assistent
+  namespace: argocd
 spec:
   project: home-assistent
   source:
-    repoURL: 'https://github.com/username/home-assistant-k8s.git'
+    repoURL: 'https://github.com/hroliveira/home-assistant-k8s.git'
     targetRevision: HEAD
     path: 'k8s-configs'
   destination:
